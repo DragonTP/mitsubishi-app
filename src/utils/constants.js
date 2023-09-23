@@ -1,0 +1,1 @@
+export const API_LINK = 'https://api.sheety.co/3899b162bf1e79ddc4e8bdc296ba4669/feedbacks/customers';
