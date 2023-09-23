@@ -21,10 +21,7 @@ const StyledFeedback = styled.div`
     content: '';
     display: block;
     position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background-image: url('/mitsubishi.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -53,13 +50,16 @@ function Feedback() {
   return (
     <StyledFeedback>
       <Container>
-        <Row type='horizontal' as='header'>
-          <Heading as='h1'>Mitsubishi</Heading>
-          <Logo />
-        </Row>
-        {status === 'ready' && <StartScreen />}
-        {status === 'active' && <FeedbackForm />}
-        {status === 'finished' && <FinishScreen />}
+        {status === 'finished' ? <FinishScreen /> : (
+          <>
+            <Row type='horizontal' as='header'>
+              <Heading as='h1'>Mitsubishi</Heading>
+              <Logo />
+            </Row>
+            {status === 'ready' && <StartScreen />}
+            {status === 'active' && <FeedbackForm />}
+          </>
+        )}
       </Container>
     </StyledFeedback>
   )

@@ -3,13 +3,15 @@ import Heading from "../../ui/Heading"
 import Main from "../../ui/Main"
 import { HiCheckCircle, HiOutlineHandRaised } from 'react-icons/hi2'
 
+const StyledMain = styled(Main)`
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 2rem;
+`
+
 const StyledHeading = styled(Heading)`
   color: var(--color-theme);
-  font-size: 2.8rem;
-  text-align: center;
-  display: flex;
-  gap: 1rem;
-  align-items: center;
 `
 
 const P = styled.p`
@@ -17,20 +19,24 @@ const P = styled.p`
   text-transform: uppercase;
   font-size: 1.4rem;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+`
+const Img = styled.img`
+  border-radius: var(--border-radius-sm);
+  width: 100%;
 `
 
 function FinishScreen() {
   return (
-    <Main>
-      <StyledHeading>
-        <HiCheckCircle />
-        <span>Cảm ơn bạn đã đánh giá</span>
-      </StyledHeading>
-      <div style={{textAlign: "center"}}>
-        <p>Chúng tôi sẽ nâng cao chất lượng dịch vụ tốt nhất</p>
-        <P>Hẹn gặp lại <HiOutlineHandRaised /></P>
-      </div>
-    </Main>
+    <StyledMain>
+      <HiCheckCircle color="var(--color-theme)" size={70} />
+      <StyledHeading>Cảm ơn bạn đã đánh giá</StyledHeading>
+      <Img src="/mitsubishi-garage.png" alt="Ảnh garage Mitsubishi" />
+      <p>Chúng tôi sẽ cố gắng nâng cao chất lượng dịch vụ tốt nhất.</p>
+      <P>Hẹn gặp lại <HiOutlineHandRaised size={20} /></P>
+    </StyledMain>
   )
 }
 

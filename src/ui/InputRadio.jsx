@@ -11,10 +11,12 @@ const LabelRadio = styled.label`
   gap: 1rem;
   align-items: center;
   cursor: pointer;
+  font-size: 2rem;
 `
 const Input = styled.input.attrs({ type: 'radio' })`
-  width: 1.5rem;
+  width: 1.6rem;
   aspect-ratio: 1;
+  cursor: pointer;
 `
 
 function InputRadio({ name, onChange }) {

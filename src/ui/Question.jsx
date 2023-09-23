@@ -3,12 +3,8 @@ import { useQuestion } from "../contexts/QuestionContext";
 import StarRating from './StarRating';
 import InputRadio from "../ui/InputRadio";
 
-const Container = styled.div`
-  margin-bottom: 2.8rem;
-`
-
 const H4 = styled.h4`
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   margin-bottom: 2.4rem;
   height: 12rem;
   display: flex;
@@ -26,11 +22,11 @@ function Question() {
   }
 
   return (
-    <Container>
+    <div>
       <H4>{question}</H4>
-      {type === 'starRating' && <StarRating key={field} onSetRating={handleRating} size={26} />}
+      {type === 'starRating' && <StarRating key={field} onSetRating={handleRating} size={24} />}
       {type === 'radio' && <InputRadio name={field} onChange={handleRating} />}
-    </Container>
+    </div>
   )
 }
 

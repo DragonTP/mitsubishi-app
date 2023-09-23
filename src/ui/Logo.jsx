@@ -11,7 +11,7 @@ const Img = styled.img`
 function Logo() {
   return (
     <StyledLogo>
-      <Img src='/logo.png' alt="Logo of Mitsubishi" />
+      <Img src='/logo.png' alt="Logo của Mitsubishi" />
     </StyledLogo>
   );
 }

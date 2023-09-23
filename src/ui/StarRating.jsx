@@ -41,7 +41,7 @@ export default function StarRating({ maxRating = 10,
       margin: 0,
       fontWeight: 500,
       color,
-      fontSize: `${size / 1.5}px`,
+      fontSize: `${size / 1.2}px`,
       minHeight: '18.66px'
    }
 

@@ -14,7 +14,7 @@ const initialState = {
 const reducer = (state, action) => {
   switch (action.type) {
     case 'start':
-      return { ...state, status: 'active' }
+      return { ...state, status: 'active', ratedObj: { ...state.ratedObj, ...action.payload } }
     case 'nextQuestion':
       return { ...state, answer: null, index: state.index + 1 };
     case 'newAnswer':
