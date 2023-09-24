@@ -16,12 +16,15 @@ const StyledFeedback = styled.div`
   align-items: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
 
   &::before {
     content: '';
     display: block;
     position: absolute;
-    inset: 0;
+    inset-inline: 0;
+    top: 0;
+    min-height: 100dvh;
     background-image: url('/mitsubishi.jpg');
     background-repeat: no-repeat;
     background-size: cover;

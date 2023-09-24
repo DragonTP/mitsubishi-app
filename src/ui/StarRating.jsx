@@ -31,9 +31,18 @@ export default function StarRating({ maxRating = 10,
 }) {
    const [rating, setRating] = useState(defaultRating);
    const [hoveredRating, setHoveredRating] = useState(defaultRating);
+
    const handleRating = rating => {
       setRating(rating);
       onSetRating?.(rating);
+   }
+   const handleTouchRating = inputRating => e => {
+      const star  = e.currentTarget;
+      const touchX = e.touches[0].clientX - star.getBoundingClientRect().left;
+      const starPlus = Math.floor(touchX / size);
+      const rating = inputRating + starPlus > maxRating ? maxRating : inputRating + starPlus;
+      handleRating(rating < 1 ? 1 : rating);
+      setHoveredRating(0);
    }
 
    const textStyle = {
@@ -54,6 +63,7 @@ export default function StarRating({ maxRating = 10,
                   onHoverIn={() => setHoveredRating(i + 1)}
                   onHoverOut={() => setHoveredRating(0)}
                   onRating={() => handleRating(i + 1)}
+                  onTouchRating={handleTouchRating(i + 1)}
                   color={color}
                   size={size}
                />)}
@@ -63,7 +73,7 @@ export default function StarRating({ maxRating = 10,
    )
 }
 
-function Star({ selected, onHoverIn, onHoverOut, onRating, color, size }) {
+function Star({ selected, onHoverIn, onHoverOut, onRating, color, size, onTouchRating }) {
    const starStyle = {
       width: `${size}px`,
       height: `${size}px`,
@@ -75,6 +85,8 @@ function Star({ selected, onHoverIn, onHoverOut, onRating, color, size }) {
       <span style={starStyle} role="button"
          onMouseOver={onHoverIn}
          onMouseOut={onHoverOut}
+         onTouchStart={onRating}
+         onTouchMove={onTouchRating}
          onClick={onRating}>
 
          {selected
