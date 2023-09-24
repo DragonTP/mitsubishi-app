@@ -9,7 +9,8 @@ import StartScreen from "../features/feedbacks/StartScreen";
 import FinishScreen from "../features/feedbacks/FinishScreen";
 
 const StyledFeedback = styled.div`
-  min-height: 100vh;
+  height: 100vh;
+  height: 100svh;
   background-color: rgb(171, 230, 229, 0.6);
   display: flex;
   justify-content: center;
@@ -22,9 +23,7 @@ const StyledFeedback = styled.div`
     content: '';
     display: block;
     position: absolute;
-    inset-inline: 0;
-    top: 0;
-    min-height: 100dvh;
+    inset: 0;
     background-image: url('/mitsubishi.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -39,7 +38,7 @@ const Container = styled.div`
   padding: 2.8rem;
   gap: 2.8rem;
   max-width: 34rem;
-  height: 80vh;
+  height: 56rem;
   box-shadow: var(--shadow-md);
 `
 
